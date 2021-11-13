@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId,force:appHostable"
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId,force:appHostable,lightning:availableForFlowScreens"
     controller="sdgController" access="global" extends="c:sdgBase">
 
     <aura:attribute name="recordId" type="String" access="global" />
