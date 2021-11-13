@@ -35,7 +35,16 @@ public with sharing class sdgObjectEventHandler {
             if (URA.HasDeleteAccess)
             {   //can delete this record
                 //Now get pointer to sobject
-                Schema.SObjectType token = sObjectID.getSObjectType();
+                Schema.SObjectType token = null;
+                
+                if(ObjectID.startswith('00a'))
+                {
+                    token = CaseComment.getSObjectType();
+                }
+                else 
+                {
+                    token = sObjectID.getSObjectType();
+                }
 
                 Schema.DescribeSObjectResult dr = token.getDescribe();
 
