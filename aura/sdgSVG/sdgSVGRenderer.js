@@ -9,7 +9,7 @@
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute('class', classname);
     svg.setAttribute('aria-hidden', ariaHidden);
-    svg.innerHTML = '<use xlink:href="/resource/sortablegrid__SLDS0121/assets/icons'+xlinkhref+'"></use>';
+    svg.innerHTML = '<use xlink:href="/resource/SLDS0121/assets/icons'+xlinkhref+'"></use>';
     return svg;
   }
 })
