@@ -65,6 +65,7 @@
         //Set up the callback
         var self = this;
         action.setCallback(this, function(actionResult) {
+
             if (actionResult.getState() =='SUCCESS')
             {
                 
@@ -87,10 +88,25 @@
                     evtRefresh.fire();
                 }
             }
+            else if (actionResult.getState() === "ERROR") {
+                var errors = response.getError();
+                if (errors) {
+                    if (errors[0] && errors[0].message) {
+                        var navToast = $A.get("e.force:showToast");
+                        navToast.setParams({
+                            "title": 'Access Error',
+                            "message" : errors[0].message
+                        });
+                        navToast.fire();
+                    }
+                } else {
+                    console.log("Unknown error");
+                }
+            }
             
         }
                            
-                          );
+        );
         
         
         
